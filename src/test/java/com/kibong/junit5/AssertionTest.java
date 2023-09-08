@@ -2,49 +2,113 @@ package com.kibong.junit5;
 
 import org.junit.jupiter.api.*;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class AssertionTest {
 
-    //검증하고자 하는 것을 확인 하는 기능
-
-
     @Test
-    @DisplayName("스터디 만들기")
-    void create_new_study() {
+    @DisplayName("assertNotNull 테스트")
+    void assertNotNullTest() {
         Study study = new Study();
         assertNotNull(study);
-        //기준이 되는 값 왼쪽 기대하는 값을 오른쪽 메세지는 supplier 사용 가능
-        //람다식으로 하면 실패 했을 때만 연산하고 어나면 실패하든 안하든 언제나 실행한다.
-        assertEquals(StudyStatus.DRAFT, study.getStatus(), "스터디를 처음 만들면 상태값이 DRAFT여야 한다.");
-        System.out.println("create");
     }
 
     @Test
-    @DisplayName("스터디 만들기 ^^")
-    void create1() {
-        System.out.println("create1");
+    @DisplayName("assertEquals 테스트")
+    void assertEqualsTest() {
+        Study study = new Study();
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+
     }
 
-    @BeforeAll
-    static void beforeAll() {
-        System.out.println("before all");
+    @Test
+    @DisplayName("assertEqualsSupplier 테스트")
+    void assertEqualsSupplierTest() {
+        Study study = new Study();
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
+        assertEquals(StudyStatus.DRAFT, study.studyStatus, () -> "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다.");
     }
 
-    @AfterAll
-    static void afterAll() {
-        System.out.println("after all");
+    @Test
+    @DisplayName("assertTrue 테스트")
+    void assertTrueTest() {
+        Study study = new Study();
+        study.setLimit(5);
+        assertTrue(study.getLimit() > 10, () -> "스터디는 10보다 큽니까?");
     }
 
-
-    @BeforeEach
-    void beforeEach() {
-        System.out.println("before each");
+    @Test
+    @DisplayName("assertAll 테스트")
+    void assertAllTest() {
+        Study study = new Study();
+        study.setLimit(5);
+        assertAll(
+                () -> assertNotNull(study),
+                () -> assertEquals(StudyStatus.STARTED, study.studyStatus, "스터디를 처음 만들면 상태값이" + StudyStatus.DRAFT + "여야 한다."),
+                () -> assertTrue(study.getLimit() > 10, () -> "스터디는 10보다 큽니까?")
+        );
+    }
+    @Test
+    @DisplayName("assertThrows 테스트")
+    void assertThrowsTest() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Study().setLimit(20));
+        String message = exception.getMessage();
+        assertEquals("스터디의 제한은 10입니다.", message);
     }
 
-    @AfterEach
-    void afterEach() {
-        System.out.println("after each");
+    @Test
+    @DisplayName("assertTimeout 테스트")
+    void assertTimeoutTest() {
+        Study study = new Study();
+
+        assertTimeout(Duration.ofMillis(300), () -> {
+            study.getStudyStatus();
+            Thread.sleep(1000);
+        });
+
+        assertTimeoutPreemptively(Duration.ofMillis(300), () -> {
+            study.getStudyStatus();
+            Thread.sleep(1000);
+        });
     }
 }
