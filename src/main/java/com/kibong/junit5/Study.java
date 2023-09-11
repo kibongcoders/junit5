@@ -4,7 +4,12 @@ public class Study {
 
     StudyStatus studyStatus = StudyStatus.DRAFT;
     int limit;
+    public Study(int limit) {
+        this.limit = limit;
+    }
+
     public Study() {
+
     }
 
     public StudyStatus getStudyStatus() {

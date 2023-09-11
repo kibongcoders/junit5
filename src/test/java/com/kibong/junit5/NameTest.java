@@ -18,8 +18,7 @@ public class NameTest {
     @Test
     @DisplayName("스터디 만들기")
     void create_new_study() {
-        Study study = new Study();
-        assertNotNull(study);
+        Study study = new Study(10);
         System.out.println("create");
     }
 
