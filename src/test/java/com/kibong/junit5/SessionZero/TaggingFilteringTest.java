@@ -14,7 +14,6 @@ public class TaggingFilteringTest{
     }
 
     @Test
-
     @Tag("slow")
     @DisplayName("Tagging Slow 테스트")
     void taggingSlowTest() {
