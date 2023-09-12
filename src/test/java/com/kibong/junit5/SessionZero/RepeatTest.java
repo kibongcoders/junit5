@@ -24,6 +24,7 @@ public class RepeatTest {
     @DisplayName("반복 테스트")
     @RepeatedTest(value = 10, name = "{displayName} {displayName}, {currentRepetition}/{totalRepetitions}")
     void repeatTest(RepetitionInfo repetitionInfo){
+
         System.out.println("test " + repetitionInfo.getCurrentRepetition() + "/" + repetitionInfo.getTotalRepetitions());
     }
 
@@ -43,6 +44,13 @@ public class RepeatTest {
     @NullAndEmptySource
     void EmptyNullTest(String message){
         System.out.println(message);
+    }
+
+    @DisplayName("Enum 테스트")
+    @ParameterizedTest(name = "{index} {displayName} message={0}")
+    @EnumSource(StudyEnum.class)
+    void EnumTest(StudyEnum studyEnum){
+        System.out.println(studyEnum);
     }
 
     @DisplayName("인스턴스 테스트")
