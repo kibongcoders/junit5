@@ -1,5 +1,7 @@
 package com.kibong.junit5;
 
+import com.kibong.junit5.domain.Study;
+import com.kibong.junit5.domain.StudyStatus;
 import org.junit.jupiter.api.*;
 
 import java.time.Duration;

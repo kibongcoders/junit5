@@ -1,10 +1,9 @@
 package com.kibong.junit5.SessionZero;
 
-import com.kibong.junit5.Study;
+import com.kibong.junit5.domain.Study;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.aggregator.AggregateWith;

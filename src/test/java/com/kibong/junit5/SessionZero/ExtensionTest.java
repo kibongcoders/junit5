@@ -2,14 +2,13 @@ package com.kibong.junit5.SessionZero;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 //@ExtendWith(FindSlowTestExtension.class) 선언적으로 가능
 public class ExtensionTest {
 
     /*
-        Junit4에 비해 Junit5는 확장 모델을 등록하는 것이 간단해졌다.
+        Junit4에 비해 Junit5는 확장 모듈을 등록하는 것이 간단해졌다.
         Junit4에서는 @RunWith(Runner), TestRule, MethodRule 등이 있었지만
         Junit5에서는 Extension 하나로 확장 모델을 만들 수 있다.
     */
@@ -19,11 +18,16 @@ public class ExtensionTest {
     @RegisterExtension
     FindSlowTestExtension findSlowTestExtension = new FindSlowTestExtension(1000L);
 
+    @DisplayName("확장 @SlowTest 테스트")
+    @SlowTest
+    void extensionSlowTest() throws InterruptedException {
+        Thread.sleep(1005);
+        System.out.println("확장 @SlowTest 테스트");
+    }
 
     @Test
     @DisplayName("확장 테스트")
-    @SlowTest
-    void extensionSlowTest() throws InterruptedException {
+    void extensionTest() throws InterruptedException {
         Thread.sleep(1005);
         System.out.println("확장 테스트");
     }

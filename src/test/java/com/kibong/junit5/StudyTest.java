@@ -1,5 +1,6 @@
 package com.kibong.junit5;
 
+import com.kibong.junit5.domain.Study;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;

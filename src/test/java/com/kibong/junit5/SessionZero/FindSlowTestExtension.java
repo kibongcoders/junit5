@@ -18,14 +18,14 @@ public class FindSlowTestExtension implements BeforeTestExecutionCallback, After
 
     //실행 전
     @Override
-    public void beforeTestExecution(ExtensionContext context) throws Exception {
+    public void beforeTestExecution(ExtensionContext context){
         ExtensionContext.Store store = getStore(context);
         store.put("START_TIME", System.currentTimeMillis());
     }
 
     //실행 후
     @Override
-    public void afterTestExecution(ExtensionContext context) throws Exception {
+    public void afterTestExecution(ExtensionContext context){
         //리플렉션으로 메소드의 애노테이션을 가져올 수 있다.
         SlowTest annotation = context.getRequiredTestMethod().getAnnotation(SlowTest.class);
         String methodName = context.getRequiredTestMethod().getName();
@@ -40,7 +40,7 @@ public class FindSlowTestExtension implements BeforeTestExecutionCallback, After
     }
 
     private static ExtensionContext.Store getStore(ExtensionContext context) {
-        String className = context.getRequiredTestClass().getName(); //메소드 정보 가져오기
+        String className = context.getRequiredTestClass().getName(); //클래스 정보 가져오기
         String methodName = context.getRequiredTestMethod().getName(); //메소드 정보 가져오기
         //store는 데이터를 넣고 뺄수 있다.
         ExtensionContext.Store store = context.getStore(ExtensionContext.Namespace.create(className, methodName));

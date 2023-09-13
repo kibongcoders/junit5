@@ -1,7 +1,6 @@
 package com.kibong.junit5.SessionZero;
 
-import com.kibong.junit5.Study;
-import org.junit.jupiter.api.Disabled;
+import com.kibong.junit5.domain.Study;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.*;
