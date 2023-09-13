@@ -1,6 +1,6 @@
 package com.kibong.junit5.SessionZero;
 
-import com.kibong.junit5.domain.Study;
+import com.kibong.junit5.study.Study;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
